@@ -1,0 +1,314 @@
+1.8.4 -> 1.9.0-dev18 Table Schema Changes
+
+==================================================
+Removed table: pet_claim_servs_secndry_diagns
+
+==================================================
+Altered table: policy_endorsem
+	New: cnstr_id (integer)
+
+==================================================
+Altered table: attr
+	Removed: is_sysmatic (boolean NOT NULL)
+	Removed: is_searchbl (boolean NOT NULL)
+	Removed: is_dispbl (boolean NOT NULL)
+
+==================================================
+Altered table: policy_endorsem_review_request_attachm
+	New: policy_endorsem_review_request_comment_id (integer)
+
+==================================================
+Removed table: appl_policy_appl_policy_tag
+
+==================================================
+Altered table: product
+	New: market_cell (character varying(100))
+	New: insurer (character varying(100))
+
+==================================================
+Altered table: benefcry_policy_party_endorsem
+	New: cnstr_id (integer)
+	New: policy_endorsem_review_request_id (integer NOT NULL)
+
+==================================================
+Removed table: medical_claim_servs_proc
+
+==================================================
+Altered table: campaign
+	Removed: tag (character varying(100))
+
+==================================================
+Altered table: appl_policy_tag
+	New: appl_policy_id (integer)
+
+==================================================
+Removed table: pet_diagns
+
+==================================================
+Removed table: attr_template_enum_val
+
+==================================================
+Removed table: pet_proc
+
+==================================================
+Altered table: mail_server
+	Removed: passwd_vault_secret_id (integer)
+	Removed: ms_teams_incoming_url (character varying(250))
+	Removed: username (character varying(100))
+	Removed: hostname (character varying(250))
+	Removed: port (integer)
+	Removed: passwd (character varying(100))
+	Removed: encrypt_type_name (character varying(25))
+
+==================================================
+Removed table: doctor
+
+==================================================
+Altered table: rule
+	New: sequence (integer NOT NULL)
+
+==================================================
+Altered table: policy
+	Removed: incept_time (timestamp without time zone)
+	Removed: secndry_state_name (character varying(25))
+	New: secndry_state_ref_table_code (character varying(100))
+	New: secndry_state (character varying(100))
+	New: secndry_state_ref_table_ver_no (integer)
+	New: secndry_state_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+New table: campaign_tag_ref_table
+	campaign_tag_ref_table_code
+	campaign_id
+	update_time
+	create_time
+	data_id
+	campaign_tag_ref_table_id
+	campaign_tag_ref_table_ver_no
+	campaign_tag_ref_table_key_col_cell_value
+
+==================================================
+Removed table: medical_proc
+
+==================================================
+Altered table: tz
+	Removed: tz_ref_table_code (character varying(100))
+	Removed: tz_ref_table_ver_no (integer)
+	Removed: tz_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Removed table: occp
+
+==================================================
+Altered table: appl_policy_tag_ref_table
+	Removed: appl_policy_tag_ref_table_key_col_cell_value (character varying(100) NOT NULL)
+	Removed: appl_policy_tag_ref_table_code (character varying(100) NOT NULL)
+	New: appl_policy_tag_ref_table_code (character varying(100))
+	New: appl_policy_tag_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Altered table: plcyhldr_policy_party_endorsem
+	New: cnstr_id (integer)
+	New: policy_endorsem_review_request_id (integer NOT NULL)
+
+==================================================
+Removed table: appl_policy_renewal_decline
+
+==================================================
+Altered table: policy_cancel_reason
+	Removed: policy_cancel_reason_code (character varying(25))
+	New: cancellation_reason (character varying(100))
+
+==================================================
+Removed table: attr_template_group
+
+==================================================
+Altered table: plan
+	New: market_cell (character varying(100))
+
+==================================================
+New table: member_remark
+	member_remark_id
+	member_id
+
+==================================================
+Altered table: appl_policy
+	Removed: incept_time (timestamp without time zone)
+	Removed: change_type_name (character varying(25))
+	Removed: secndry_state_name (character varying(25))
+	Removed: appl_policy_renewal_decline_id (integer)
+	New: secndry_state_ref_table_code (character varying(100))
+	New: secndry_state (character varying(100))
+	New: secndry_state_ref_table_ver_no (integer)
+	New: secndry_state_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Removed table: medical_diagns
+
+==================================================
+Altered table: cnstr
+	Removed: attr_template_group_id (integer NOT NULL)
+
+==================================================
+Removed table: attr_template_valid
+
+==================================================
+Removed table: target_model_sys_attr_template
+
+==================================================
+Removed table: pet_insured_subj_cr_item
+
+==================================================
+New table: insured_subj_cr_item
+	insured_subj_id
+	policy_cr_id
+	update_time
+	create_time
+	data_id
+	insured_subj_cr_item_id
+	action_type_name
+
+==================================================
+Removed table: appl_policy_renewal_decline_reason
+
+==================================================
+Altered table: insured_subj_endorsem
+	New: cnstr_id (integer)
+	New: policy_endorsem_review_request_id (integer NOT NULL)
+
+==================================================
+Altered table: insured_subj
+	Removed: client_id (character varying(100))
+	New: client_data_obj (json)
+	New: client_id (character varying)
+
+==================================================
+Removed table: medical_claim_servs
+
+==================================================
+Altered table: policy_cr
+	Removed: secndry_state_name (character varying(25))
+	Removed: old_secndry_state_name (character varying(25))
+	New: secndry_state (character varying(100))
+	New: secndry_state_ref_table_ver_no (integer)
+	New: old_secndry_state_ref_table_code (character varying(100))
+	New: secndry_state_ref_table_key_col_cell_value (character varying(100))
+	New: secndry_state_ref_table_code (character varying(100))
+	New: old_secndry_state_ref_table_key_col_cell_value (character varying(100))
+	New: old_secndry_state_ref_table_ver_no (integer)
+	New: old_secndry_state (character varying(100))
+
+==================================================
+Removed table: campaign_campaign_tag
+
+==================================================
+Removed table: pet_claim_servs_proc
+
+==================================================
+Removed table: attr_template
+
+==================================================
+Removed table: vet
+
+==================================================
+Altered table: claim_line
+	Removed: benefit_type_id (integer)
+
+==================================================
+New table: policy_cancellation_reason_ref_table
+	cancellation_reason_ref_table_code
+	update_time
+	policy_cancel_reason_descr
+	create_time
+	policy_cancellation_reason_ref_table_id
+	data_id
+	cancellation_reason_ref_table_ver_no
+	policy_cancel_request_id
+	cancellation_reason_ref_table_key_col_cell_value
+
+==================================================
+Altered table: ribursm_benefit
+	Removed: ribursm_benefit_type_ref_table_code (character varying(100))
+	Removed: ribursm_benefit_type_ref_table_key_col_cell_value (character varying(100))
+	Removed: ribursm_benefit_type_ref_table_ver_no (integer)
+	New: benefit_type_ref_table_ver_no (integer)
+	New: benefit_type_ref_table_code (character varying(100))
+	New: benefit_type_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Altered table: campaign_tag
+	Removed: campaign_tag_name (character varying(100))
+	New: campaign_id (integer NOT NULL)
+	New: campaign_tag_name (character varying(100) NOT NULL)
+
+==================================================
+Altered table: lump_sum_benefit
+	Removed: lump_sum_benefit_type_ref_table_code (character varying(100))
+	Removed: lump_sum_benefit_type_ref_table_ver_no (integer)
+	Removed: lump_sum_benefit_type_ref_table_key_col_cell_value (character varying(100))
+	New: benefit_type_ref_table_ver_no (integer)
+	New: benefit_type_ref_table_code (character varying(100))
+	New: benefit_type_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Altered table: attr_valid
+	Removed: data_validation_ref_table_key_col_cell_value (character varying(100) NOT NULL)
+	Removed: data_validation_ref_table_code (character varying(100) NOT NULL)
+	New: data_validation_ref_table_code (character varying(100))
+	New: data_validation_error_message (character varying(100) NOT NULL)
+	New: data_validation_ref_table_key_col_cell_value (character varying(100))
+
+==================================================
+Removed table: medical_claim_servs_secndry_diagns
+
+==================================================
+Altered table: appl_insured_subj
+	Removed: client_id (character varying(100))
+	New: client_data_obj (json)
+	New: client_id (character varying)
+
+==================================================
+New table: ixt_events
+	event_type_id
+	id
+	created_at
+	updated_at
+	data_obj
+	internal_user_id
+	resource_id
+	is_synced
+
+==================================================
+Altered table: ribursm_limit
+	Removed: ribursm_limit_amt (numeric)
+	New: ribursm_limit_type (character varying(100) NOT NULL)
+	New: ribursm_limit_value (numeric)
+
+==================================================
+Altered table: benefit_type_product_type
+	Removed: benefit_type_id (integer)
+	New: benefit_type (character varying(100))
+
+==================================================
+Removed table: attr_template_group_attr_template
+
+==================================================
+Altered table: benefit
+	Removed: benefit_type_id (integer)
+	New: benefit_type (character varying(100))
+
+==================================================
+Removed table: pet_claim_servs
+
+==================================================
+Removed table: pet_type
+
+==================================================
+Removed table: pet_breed
+
+==================================================
+Altered table: policy_plan_endorsem
+	New: cnstr_id (integer)
+	New: policy_endorsem_review_request_id (integer NOT NULL)
+
+==================================================
